@@ -10,6 +10,7 @@ interface TwitterStrategyOptionsBase {
   userProfileURL?: string | undefined;
   authorizationURL?: string | undefined;
   tokenURL?: string | undefined;
+  includeEmail?: boolean;
 }
 
 /**

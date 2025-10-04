@@ -44,5 +44,12 @@ describe('mapUserProfile', function () {
         'https://pbs.twimg.com/profile_images/1478302204306067462/5BEbrnPO_normal.jpg'
       );
     });
+
+    it('should parse confirmed email', function () {
+      expect(profile.emails).to.have.length(1);
+      expect(profile.emails && profile.emails[0].value).to.equal(
+        'superface_test@email.com'
+      );
+    });
   });
 });

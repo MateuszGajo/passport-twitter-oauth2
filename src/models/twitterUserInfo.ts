@@ -8,4 +8,5 @@ export interface TwitterUserInfo {
   username: string;
   profile_image_url?: string;
   url: string;
+  confirmed_email?: string;
 }

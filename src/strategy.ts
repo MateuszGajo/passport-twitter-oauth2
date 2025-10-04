@@ -76,9 +76,12 @@ export class Strategy extends OAuth2Strategy {
     }
 
     this.name = 'twitter';
-    this._userProfileURL =
-      options.userProfileURL ||
+    let defaultUserProfileURL =
       'https://api.twitter.com/2/users/me?user.fields=profile_image_url,url';
+    if (options.includeEmail) {
+      defaultUserProfileURL += ',confirmed_email';
+    }
+    this._userProfileURL = options.userProfileURL || defaultUserProfileURL;
 
     let scope = options.scope || [];
     if (!Array.isArray(scope)) {
@@ -230,6 +233,10 @@ export class Strategy extends OAuth2Strategy {
 
     if (!skipUserProfile) {
       scopes.push('users.read');
+    }
+
+    if (options.includeEmail) {
+      scopes.push('users.email');
     }
 
     return scopes;

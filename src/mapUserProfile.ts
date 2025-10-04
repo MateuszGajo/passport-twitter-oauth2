@@ -12,6 +12,9 @@ export const mapUserProfile = (json: string | TwitterUserInfo): Profile => {
   const photos = parsedJson.profile_image_url
     ? [{ value: parsedJson.profile_image_url }]
     : [];
+  const emails = parsedJson.confirmed_email
+    ? [{ value: parsedJson.confirmed_email }]
+    : undefined;
   const profile: Profile = {
     provider: 'twitter',
     id: parsedJson.id,
@@ -19,6 +22,7 @@ export const mapUserProfile = (json: string | TwitterUserInfo): Profile => {
     displayName: parsedJson.name,
     profileUrl: parsedJson.url,
     photos,
+    emails,
   };
 
   return profile;

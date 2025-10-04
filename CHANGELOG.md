@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 1.2.5-beta.0 - 2025-10-04
+### Added
+- Add support for returning email in user profile
+
 ## 1.2.4 - 2024-02-06
 
 ## 1.2.4-beta.0 - 2024-01-29
